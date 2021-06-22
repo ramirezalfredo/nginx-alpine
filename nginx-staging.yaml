@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: nginx-alpine
+  namespace: argocd
+spec:
+  destination:
+    namespace: staging
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    helm:
+      valueFiles:
+      - values-staging.yaml
+    # path to the folder with the YAML manifests
+    path: nginx-deployment
+    repoURL: https://github.com/ramirezalfredo/nginx-alpine
+    targetRevision: HEAD
+  # Sync policy
+  syncPolicy: {}
