@@ -5,7 +5,7 @@ replicaCount: 2
 
 image:
   repository: nginx
-  tag: 1.17.0
+  tag: 1.25.2-alpine
 
 resources:
   requests:
