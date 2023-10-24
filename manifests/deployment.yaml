@@ -24,7 +24,7 @@ spec:
         tag: alpine
     spec:
       containers:
-      - image: nginx:1.24-alpine3.17
+      - image: nginx:1.24.0-alpine-slim
         imagePullPolicy: IfNotPresent
         name: nginx-alpine
         ports:
